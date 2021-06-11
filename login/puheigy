@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'/><title>&nbsp;</title><meta name='robots' content='noindex'><meta http-equiv='refresh' content='1200'><script src='/schule_portal/project/js/jquery/jquery-3.3.1.min.js'></script><link rel='stylesheet' type='text/css' href='/schule_portal/project/css/fomantic_ui/semantic.min.css'><script src='/schule_portal/project/js/fomantic_ui/semantic.min.js'></script><style>.ui.segment { width:20%; background-color:#E7E7E7; min-width: 20em; text-align:left; }</style></head><body><center><p>&nbsp;</p><p><span class='ui text large'>Informationsportal</span><br /><span class='ui text huge'>Gymnasium Puchheim</span></p><br /><img src='/assets/puheigy/logo_big.png' border='0' /><p><br />Version 2021.06.09.163134</p><div id='browser-test' class='ui segment asam_label_red'><p>Ihrem Browser fehlen leider folgende Funktionen:</p><ul id='browser-test-list'><li>Javascript</li></ul><p>Bitte installieren Sie die aktuellste Version ihres Browsers oder kontaktieren Sie ihren Systemadministrator.</p></div><form class='ui segment form' id='login-form' style='display:none; ' name='signon' method='post' action=''><div class='field'><label for='user'>Benutzer</label><input type='text' id='user' name='user' value='' autofocus></div><div class='field'><label for='password'>Passwort</label><input type='password' id='password'></div><div style='display: flex; justify-content: space-around;'>        <style scoped>
+            #close_button:hover {
+                background: rgba(219,40,40,0.1) !important;
+            }
+            #submit_button:hover {
+                background: rgba(31,184,67,0.1) !important;
+            }
+        </style>
+        <a href='/schule_portal/project/auth/logout.php'><button type='button' id='close_button' class='ui negative basic button'>Beenden</button></a><input id='submit_button' class='ui secondary basic button' style='font-weight:bold;' type='submit' value='Anmelden'></div></form><p style='color: #CC0033'></p><img src='/schule_portal/project/images/sec_zert.png' id='sec_zert' style='width:2%' onMouseOver='showzert("b")' onMouseOut='showzert("s")' /></center><script type="text/javascript">
+function featureTest() {
+    var list = [];
+
+    if(typeof window.XMLHttpRequest === "undefined") {
+        list.push("AJAX-Methoden");
+    }
+    if(typeof window.WebSocket === "undefined") {
+        list.push("WebSocket-Verbindungen");
+    }
+    if(navigator.cookieEnabled !== true) {
+        list.push("Cookies");
+    }
+    if(list.length > 0) {
+        var browserList = document.getElementById("browser-test-list");
+        browserList.innerHTML = '';
+        for(var i=0; i<list.length; i++) {
+            var point = document.createElement("li");
+            point.innerText = list[i];
+            browserList.appendChild(point);
+        }
+    } else {
+        document.getElementById("browser-test").style.display = 'none';
+        document.getElementById("login-form").style.display = 'block';
+    }
+}
+featureTest();
+function showzert(val) {
+    var zert = document.getElementById("sec_zert");
+    if (val == "b") {
+        zert.style.width='240px';
+        zert.style.height='240px';
+    }
+    else {
+        zert.style.width='2%';
+        zert.style.height='2%';
+    }
+}
+</script>
+</body></html>
