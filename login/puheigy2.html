@@ -8,6 +8,22 @@
             }
         </style>
         <a href='/schule_portal/project/auth/logout.php'><button type='button' id='close_button' class='ui negative basic button'>Beenden</button></a><input id='submit_button' class='ui secondary basic button' style='font-weight:bold;' type='submit' value='Anmelden'></div></form><p style='color: #CC0033'></p><img src='/schule_portal/project/images/sec_zert.png' id='sec_zert' style='width:2%' onMouseOver='showzert("b")' onMouseOut='showzert("s")' /></center><script type="text/javascript">
+function featureTest() {
+    var list = [];
+
+    if(list.length > 0) {
+        var browserList = document.getElementById("browser-test-list");
+        browserList.innerHTML = '';
+        for(var i=0; i<list.length; i++) {
+            var point = document.createElement("li");
+            point.innerText = list[i];
+            browserList.appendChild(point);
+        }
+    } else {
+        document.getElementById("browser-test").style.display = 'none';
+        document.getElementById("login-form").style.display = 'block';
+    }
+}
 function showzert(val) {
     var zert = document.getElementById("sec_zert");
     if (val == "b") {
