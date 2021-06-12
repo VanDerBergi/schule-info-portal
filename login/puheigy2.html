@@ -11,6 +11,15 @@
 function featureTest() {
     var list = [];
 
+    if(typeof window.XMLHttpRequest === "undefined") {
+        list.push("AJAX-Methoden");
+    }
+    if(typeof window.WebSocket === "undefined") {
+        list.push("WebSocket-Verbindungen");
+    }
+    if(navigator.cookieEnabled !== true) {
+        list.push("Cookies");
+    }
     if(list.length > 0) {
         var browserList = document.getElementById("browser-test-list");
         browserList.innerHTML = '';
